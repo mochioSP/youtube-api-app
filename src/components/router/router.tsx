@@ -9,8 +9,8 @@ export const Router: FC = memo(() => {
   return (
     <Routes>
       <Route path={"/"} element={<Shiba />} />
-      <Route path={"/siberianhusky/"} element={<SiberianHusky />} />
-      <Route path={"/toypoodle/"} element={<ToyPoodle />} />
+      {/* <Route path={"/siberianhusky/"} element={<SiberianHusky />} /> */}
+      {/* <Route path={"/toypoodle/"} element={<ToyPoodle />} /> */}
     </Routes>
   );
 });

@@ -1,7 +1,7 @@
 import { FC, memo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { UserCard } from "../organism/user/UserCard";
+import { VideoCard } from "../organism/user/VideoCard";
 import { useShibaVideo } from "../hooks/useShibaVideo";
 
 export const Shiba: FC = memo(() => {
@@ -19,7 +19,7 @@ export const Shiba: FC = memo(() => {
         トイプードルは<Link to={`/ToyPoodle/`}>こちら</Link>
       </div>
       {videos.map((item) => (
-        <UserCard item={item} />
+        <VideoCard item={item} />
       ))}
     </>
   );
