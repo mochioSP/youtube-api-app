@@ -1,7 +1,14 @@
-import { FC, memo } from "react";
+import { FC, memo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { VideoCard } from "../organism/user/VideoCard";
+import { useToyPoodleVideo } from "../hooks/useToyPoodleVideo";
+
 export const ToyPoodle: FC = memo(() => {
+  const { getToyPoodleVideo, videos } = useToyPoodleVideo();
+
+  useEffect(() => getToyPoodleVideo(), []);
+
   return (
     <>
       <p>トイプードル動画</p>
@@ -11,6 +18,9 @@ export const ToyPoodle: FC = memo(() => {
       <div>
         シベリアンハスキーは<Link to={`/siberianhusky/`}>こちら</Link>
       </div>
+      {videos.map((item) => (
+        <VideoCard item={item} />
+      ))}
     </>
   );
 });
