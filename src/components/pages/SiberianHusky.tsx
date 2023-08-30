@@ -1,7 +1,7 @@
 import { FC, memo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { VideoCard } from "../organism/user/VideoCard";
+import { VideoCard } from "../organism/video/VideoCard";
 import { useSiberianHuskyVideo } from "../hooks/useSiberianHuskyVideo";
 
 export const SiberianHusky: FC = memo(() => {
