@@ -2,12 +2,12 @@ import { FC, memo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { VideoCard } from "../organism/video/VideoCard";
-import { useSiberianHuskyVideo } from "../hooks/useSiberianHuskyVideo";
+import { useSiberianHuskyVideo } from "../../hooks/useSiberianHuskyVideo";
 
 export const SiberianHusky: FC = memo(() => {
   const { getSiberianHuskyVideo, videos } = useSiberianHuskyVideo();
 
-  useEffect(() => getSiberianHuskyVideo(), []);
+  useEffect(() => getSiberianHuskyVideo(), [getSiberianHuskyVideo]);
 
   return (
     <>

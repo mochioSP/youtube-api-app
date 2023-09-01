@@ -1,17 +1,18 @@
 import axios from "axios";
-import "../../style/Items.css";
+import "../style/Items.css";
 import { useCallback, useState } from "react";
-import { Item } from "../type/api/Item";
 
-export const useToyPoodleVideo = () => {
+import { Item } from "../components/type/api/Item";
+
+export const useShibaVideo = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [videos, setVideos] = useState<Array<Item>>([]);
 
-  const getToyPoodleVideo = useCallback(() => {
+  const getShibaVideo = useCallback(() => {
     setLoading(true);
 
     axios
-      .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&q=%E3%83%88%E3%82%A4%E3%83%97%E3%83%BC%E3%83%89%E3%83%AB&relevanceLanguage=ja&type=video&key=${process.env.REACT_APP_API_KEY}`)
+      .get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&q=%E6%9F%B4%E7%8A%AC&relevanceLanguage=ja&type=video&key=${process.env.REACT_APP_API_KEY}`)
       .then((res) => {
         //console.log(res);
         setVideos(res.data.items);
@@ -22,5 +23,5 @@ export const useToyPoodleVideo = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return { getToyPoodleVideo, videos, loading };
+  return { getShibaVideo, videos, loading };
 };

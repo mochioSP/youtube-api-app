@@ -8,13 +8,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { VideoCard } from "../organism/video/VideoCard";
-import { useShibaVideo } from "../hooks/useShibaVideo";
-import { Slider } from "../teseSwiper";
+import { useShibaVideo } from "../../hooks/useShibaVideo";
 
 export const Shiba: FC = memo(() => {
   const { getShibaVideo, videos } = useShibaVideo();
 
-  useEffect(() => getShibaVideo(), []);
+  useEffect(() => getShibaVideo(), [getShibaVideo]);
 
   return (
     <>
@@ -32,21 +31,6 @@ export const Shiba: FC = memo(() => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <Swiper modules={[Navigation, Pagination]} navigation pagination={{ clickable: true }}>
-        <SwiperSlide>
-          <img src="http://placehold.jp/700x400.png?text=1" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="http://placehold.jp/700x400.png?text=2" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="http://placehold.jp/700x400.png?text=3" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="http://placehold.jp/700x400.png?text=4" alt="" />
-        </SwiperSlide>
-      </Swiper>
-      <Slider /> */}
     </>
   );
 });

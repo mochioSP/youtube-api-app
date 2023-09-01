@@ -1,22 +1,25 @@
 import { FC, memo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { useAnythingVideo } from "../../hooks/useAnythingVideo";
 import { VideoCard } from "../organism/video/VideoCard";
-import { useToyPoodleVideo } from "../../hooks/useToyPoodleVideo";
 
-export const ToyPoodle: FC = memo(() => {
-  const { getToyPoodleVideo, videos } = useToyPoodleVideo();
-
-  useEffect(() => getToyPoodleVideo(), [getToyPoodleVideo]);
+export const Anything: FC = memo(() => {
+  const { videos } = useAnythingVideo();
+  console.log(videos);
 
   return (
+    //anythingには検索ワードが入るようにする
     <>
-      <p>トイプードル動画</p>
+      <p>anything動画</p>
       <div>
         柴犬は<Link to={`/`}>こちら</Link>
       </div>
       <div>
         シベリアンハスキーは<Link to={`/siberianhusky/`}>こちら</Link>
+      </div>
+      <div>
+        トイプードルは<Link to={`/ToyPoodle/`}>こちら</Link>
       </div>
       {videos.map((item) => (
         <VideoCard item={item} />
