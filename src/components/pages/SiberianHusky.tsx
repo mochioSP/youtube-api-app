@@ -1,8 +1,11 @@
 import { FC, memo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 import { VideoCard } from "../organism/video/VideoCard";
 import { useSiberianHuskyVideo } from "../../hooks/useSiberianHuskyVideo";
+
+import "swiper/css";
 
 export const SiberianHusky: FC = memo(() => {
   const { getSiberianHuskyVideo, videos } = useSiberianHuskyVideo();
@@ -12,15 +15,17 @@ export const SiberianHusky: FC = memo(() => {
   return (
     <>
       <p>シベリアンハスキー動画</p>
-      <div>
-        柴犬は<Link to={`/`}>こちら</Link>
-      </div>
-      <div>
-        トイプードルは<Link to={`/toypoodle/`}>こちら</Link>
-      </div>
-      {videos.map((item) => (
-        <VideoCard item={item} />
-      ))}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+      >
+        {videos.map((item) => (
+          <SwiperSlide>
+            <VideoCard item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 });

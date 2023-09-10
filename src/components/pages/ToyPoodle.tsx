@@ -1,5 +1,6 @@
 import { FC, memo, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 import { VideoCard } from "../organism/video/VideoCard";
 import { useToyPoodleVideo } from "../../hooks/useToyPoodleVideo";
@@ -12,15 +13,17 @@ export const ToyPoodle: FC = memo(() => {
   return (
     <>
       <p>トイプードル動画</p>
-      <div>
-        柴犬は<Link to={`/`}>こちら</Link>
-      </div>
-      <div>
-        シベリアンハスキーは<Link to={`/siberianhusky/`}>こちら</Link>
-      </div>
-      {videos.map((item) => (
-        <VideoCard item={item} />
-      ))}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+      >
+        {videos.map((item) => (
+          <SwiperSlide>
+            <VideoCard item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 });
