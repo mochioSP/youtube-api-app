@@ -2,19 +2,21 @@ import { FC, memo, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-import { VideoCard } from "../organism/video/VideoCard";
-import { useSiberianHuskyVideo } from "../../hooks/useSiberianHuskyVideo";
-
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-export const SiberianHusky: FC = memo(() => {
-  const { getSiberianHuskyVideo, videos } = useSiberianHuskyVideo();
+import { VideoCard } from "../../molecules/VideoCard";
+import { useShibaVideo } from "../../../../src/hooks/useShibaVideo";
 
-  useEffect(() => getSiberianHuskyVideo(), [getSiberianHuskyVideo]);
+export const Shiba: FC = memo(() => {
+  const { getShibaVideo, videos } = useShibaVideo();
+
+  useEffect(() => getShibaVideo(), [getShibaVideo]);
 
   return (
     <>
-      <p>シベリアンハスキー動画</p>
+      <p style={{ textAlign: "center" }}>柴犬動画</p>
       <Swiper
         modules={[Navigation, Pagination]}
         navigation

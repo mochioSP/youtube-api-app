@@ -16,18 +16,20 @@ export const Search: FC = memo(() => {
   };
 
   return (
-    <div className="Search">
+    <div className="Search" style={{ textAlign: "center" }}>
       <input
-        placeholder="ここに入力"
+        placeholder="自分にとっての癒しを入力"
         type="text"
         value={searchWord}
         onChange={onChangeSearchWord}
         className="searchInput"
+        style={{ width: "700px", height: "50px", borderRadius: "5px" }}
       />
       <button
         disabled={searchWord === ""}
         onClick={onClickGetUrl}
         className="searchButton"
+        style={{ width: "100px", height: "55px" }}
       >
         検索
       </button>

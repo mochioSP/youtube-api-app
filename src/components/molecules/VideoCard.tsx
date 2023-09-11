@@ -1,5 +1,6 @@
 import { FC, memo } from "react";
-import { Item } from "../../type/api/Item";
+import { Item } from "../type/api/Item";
+import "../../style/Items.css";
 
 type Props = {
   item: Item;
@@ -21,7 +22,10 @@ export const VideoCard: FC<Props> = memo((props) => {
       <div className="item">
         <div className="thumbnail">
           <a href={youtubeUrl + item.id.videoId}>
-            <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} />
+            <img
+              src={item.snippet.thumbnails.medium.url}
+              alt={item.snippet.title}
+            />
           </a>
         </div>
         <div className="right">
@@ -30,7 +34,9 @@ export const VideoCard: FC<Props> = memo((props) => {
           </div>
           <div className="description">{item.snippet.description}</div>
           <div className="channel">
-            <a href={channelUrl + item.snippet.channelId}>{item.snippet.channelTitle}</a>
+            <a href={channelUrl + item.snippet.channelId}>
+              {item.snippet.channelTitle}
+            </a>
           </div>
           <div className="time">{formatDate(item.snippet.publishedAt)}</div>
         </div>
