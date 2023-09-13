@@ -24,7 +24,7 @@ export const SiberianHusky: FC = memo(() => {
       >
         {videos.map((item) => (
           <SwiperSlide>
-            <VideoCard item={item} />
+            <VideoCard key={item.etag} item={item} />
           </SwiperSlide>
         ))}
       </Swiper>
