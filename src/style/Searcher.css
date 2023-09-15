@@ -1,0 +1,16 @@
+.searcher {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.Search-input {
+  width: 700px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.search-button {
+  width: 100px;
+  height: 55px;
+}

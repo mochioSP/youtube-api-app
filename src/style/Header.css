@@ -1,0 +1,11 @@
+header {
+  height: 70px;
+  background-color: #4682a9;
+}
+
+p {
+  color: #f6f4eb;
+  margin: 0;
+  padding-left: 70px;
+  font-size: 36px;
+}
