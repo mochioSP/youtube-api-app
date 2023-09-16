@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
-import type { Item } from "../components/type/api/Item";
+import type { Item } from "../components/type/api/Videos";
 
 export const useSiberianHuskyVideo = () => {
   const [loading, setLoading] = useState<boolean>(false);

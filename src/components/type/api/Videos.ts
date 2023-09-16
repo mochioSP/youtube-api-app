@@ -1,4 +1,4 @@
-export type Item = {
+export type Videos = {
   kind: string;
   etag: string;
   id: {

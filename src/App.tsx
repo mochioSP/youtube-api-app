@@ -6,6 +6,7 @@ import { Shiba } from "./components/organism/video/Shiba";
 import { SiberianHusky } from "./components/organism/video/SiberianHusky";
 import { ToyPoodle } from "./components/organism/video/ToyPoodle";
 import { Layout } from "./components/template/Layout";
+import { Suspense } from "react";
 
 function App() {
   return (

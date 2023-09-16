@@ -20,7 +20,8 @@ export const SideBar = () => {
         </header>
         <nav className="sidebar-menu">
           {navItems.map((item) => (
-            <button className="sidebar-button" key={item}>
+            <button key={item} type="button" className="sidebar-button">
+              <span>{item}</span>
               <p>{item}</p>
             </button>
           ))}

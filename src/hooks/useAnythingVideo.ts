@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
 
-import type { Item } from "../components/type/api/Item";
+import type { Item } from "../components/type/api/Videos";
 import { useNavigate } from "react-router-dom";
 
 export const useAnythingVideo = () => {
