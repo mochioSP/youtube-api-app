@@ -1,13 +1,13 @@
 import { FC, memo } from "react";
-import { Videos } from "../type/api/Videos";
+import { Video } from "../type/api/Video";
 import "../../style/Items.css";
 
 type Props = {
-  ShibaVideo: Videos;
+  video: Video;
 };
 
 export const VideoCard: FC<Props> = memo((props) => {
-  const { ShibaVideo } = props;
+  const { video } = props;
 
   const youtubeUrl = "https://www.youtube.com/watch?v=";
   const channelUrl = "https://www.youtube.com/channel/";
@@ -21,28 +21,24 @@ export const VideoCard: FC<Props> = memo((props) => {
     <section className="items">
       <div className="item">
         <div className="thumbnail">
-          <a href={youtubeUrl + ShibaVideo.id.videoId}>
+          <a href={youtubeUrl + video.id.videoId}>
             <img
-              src={ShibaVideo.snippet.thumbnails.medium.url}
-              alt={ShibaVideo.snippet.title}
+              src={video.snippet.thumbnails.medium.url}
+              alt={video.snippet.title}
             />
           </a>
         </div>
         <div className="right">
           <div className="title">
-            <a href={youtubeUrl + ShibaVideo.id.videoId}>
-              {ShibaVideo.snippet.title}
-            </a>
+            <a href={youtubeUrl + video.id.videoId}>{video.snippet.title}</a>
           </div>
-          <div className="description">{ShibaVideo.snippet.description}</div>
+          <div className="description">{video.snippet.description}</div>
           <div className="channel">
-            <a href={channelUrl + ShibaVideo.snippet.channelId}>
-              {ShibaVideo.snippet.channelTitle}
+            <a href={channelUrl + video.snippet.channelId}>
+              {video.snippet.channelTitle}
             </a>
           </div>
-          <div className="time">
-            {formatDate(ShibaVideo.snippet.publishedAt)}
-          </div>
+          <div className="time">{formatDate(video.snippet.publishedAt)}</div>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
-import type { Item } from "../components/type/api/Videos";
+import type { Video } from "../components/type/api/Video";
 
 export const useSiberianHuskyVideo = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [videos, setVideos] = useState<Array<Item>>([]);
+  const [videos, setVideos] = useState<Array<Video>>([]);
 
   const getSiberianHuskyVideo = useCallback(() => {
     setLoading(true);

@@ -21,7 +21,7 @@ export const Anything: FC = memo(() => {
       >
         {videos.map((item) => (
           <SwiperSlide>
-            <VideoCard item={item} />
+            <VideoCard video={item} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,0 +1,76 @@
+[33mcommit 43ea6d31a6642e0449e581118cf110beb1cd0901[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Sat Sep 16 19:24:22 2023 +0900
+
+    柴だけreactQuery
+
+[33mcommit a851224b5a4bb1042ee7609c8f964accda05eb91[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Fri Sep 15 18:13:43 2023 +0900
+
+    cssのファイルを分けるついでに簡単にレイアウトを整理した
+    ボタンも別のコンポーネントに切り分けた
+
+[33mcommit 1ab235a9f3effb2eea1a4efa96ba0f765ef45f70[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Thu Sep 14 23:57:41 2023 +0900
+
+    はすきー以外の犬のボタン設置
+
+[33mcommit ca08c1ba56549f5223d2f0638193e7aff0d413eb[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Wed Sep 13 22:22:35 2023 +0900
+
+    開閉できるサイドバーを付けてみた
+
+[33mcommit 5da361ea3bcb8b12779a07751a9b075a81da5a5b[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Tue Sep 12 07:54:26 2023 +0900
+
+    ルーティングの設定をreactRouter.ｖ5→v6の書き方に変更
+
+[33mcommit 5357da1f85a4fabee53c47c3c88a12ead6e69981[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Sun Sep 10 18:58:10 2023 +0900
+
+    動画表示のコンポーネント内整理と、swiper未実装箇所を無くした
+
+[33mcommit f3b3459de39d3f40e4218235540dc7105f51ef67[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Fri Sep 1 21:16:52 2023 +0900
+
+    好きな単語で動画検索をできる機能の実装
+    【検索】クリック→API叩く
+    上手くいかないので
+    【検索】クリック→リンク遷移(リンク先でAPI叩く)
+    を別で試す
+
+[33mcommit d16c26af635eabfafda5aa9b48ce5a92e65650d1[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Wed Aug 30 23:35:22 2023 +0900
+
+    swiperを使用して取得した動画をスライド表示
+
+[33mcommit e6abd1c4de47dc20353b893ea9b8344232c105f7[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Tue Aug 29 20:20:34 2023 +0900
+
+    柴犬、ハスキー、プードルのAPIを取得して再生回数順に表示
+
+[33mcommit 253d000767b2936a9c2f2b94779f52b2086bd170[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Mon Aug 28 18:51:37 2023 +0900
+
+    シベリアンハスキーの動画を10個取得(ミスでAPI取得上限に引っ掛かり動作未確認)
+
+[33mcommit 6a7b6da6a31125097cad365f3675569c624336f6[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Sat Aug 26 21:18:05 2023 +0900
+
+    youtubeAPIで柴犬動画を表示
+
+[33mcommit 3e97325528bcbebe509b0483edc9b4b99b556e07[m
+Author: mochioSP <keeee50114@gmail.com>
+Date:   Thu Aug 24 13:39:34 2023 +0900
+
+    Initialize project using Create React App

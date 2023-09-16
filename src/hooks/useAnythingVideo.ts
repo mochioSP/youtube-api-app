@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
 
-import type { Item } from "../components/type/api/Videos";
+import type { Video } from "../components/type/api/Video";
 import { useNavigate } from "react-router-dom";
 
 export const useAnythingVideo = () => {
-  const [videos, setVideos] = useState<Array<Item>>([]);
+  const [videos, setVideos] = useState<Array<Video>>([]);
   const navigate = useNavigate();
 
   const getAnythingVideo = useCallback(
