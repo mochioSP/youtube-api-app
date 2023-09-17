@@ -21,9 +21,9 @@ export const Shiba: FC = memo(() => {
         navigation
         pagination={{ clickable: true }}
       >
-        {videos.map((item) => (
+        {videos.map((video) => (
           <SwiperSlide>
-            <VideoCard video={item} />
+            <VideoCard video={video} />
           </SwiperSlide>
         ))}
       </Swiper>

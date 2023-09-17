@@ -1,12 +1,15 @@
-import { FC, memo } from "react";
+import { FC, memo, useContext, useEffect } from "react";
 
 import { useAnythingVideo } from "../../../hooks/useAnythingVideo";
 import { VideoCard } from "../../molecules/VideoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { InputContext } from "../../../provides/InputTextProvider";
 
 export const Anything: FC = memo(() => {
-  const { videos } = useAnythingVideo();
+  const { searchWord }: any = useContext(InputContext);
+  const { getAnythingVideo, videos } = useAnythingVideo();
+  useEffect(() => getAnythingVideo(searchWord), []);
   console.log("Anything");
   console.log(videos);
 
@@ -19,9 +22,9 @@ export const Anything: FC = memo(() => {
         navigation
         pagination={{ clickable: true }}
       >
-        {videos.map((item) => (
+        {videos.map((video) => (
           <SwiperSlide>
-            <VideoCard video={item} />
+            <VideoCard video={video} />
           </SwiperSlide>
         ))}
       </Swiper>

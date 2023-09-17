@@ -1,20 +1,19 @@
-import { ChangeEvent, FC, memo, useState } from "react";
-import { useAnythingVideo } from "../../hooks/useAnythingVideo";
+import { ChangeEvent, FC, memo, useContext, useState } from "react";
 
 import "../../style/Searcher.css";
+import { useNavigate } from "react-router-dom";
+import { InputContext } from "../../provides/InputTextProvider";
 
 export const Searcher: FC = memo(() => {
-  console.log("Search");
-
-  const [searchWord, setSearchWord] = useState("");
+  const navigate = useNavigate();
+  const { searchWord, setSearchWord }: any = useContext(InputContext);
+  // const [searchWord, setSearchWord] = useState("");
 
   const onChangeSearchWord = (e: ChangeEvent<HTMLInputElement>) =>
     setSearchWord(e.target.value);
 
-  const { getAnythingVideo, videos } = useAnythingVideo();
-
-  const onClickGetUrl = () => {
-    getAnythingVideo(searchWord);
+  const onClickGetAnythingPage = () => {
+    navigate("/any");
   };
 
   return (
@@ -22,15 +21,15 @@ export const Searcher: FC = memo(() => {
       <div className="searcher">
         <input
           className="Search-input"
-          placeholder="自分にとっての癒しを入力"
+          placeholder="すきな動物を入力"
           type="text"
-          value={searchWord}
           onChange={onChangeSearchWord}
+          value={searchWord}
         />
         <button
           className="search-button"
           disabled={searchWord === ""}
-          onClick={onClickGetUrl}
+          onClick={onClickGetAnythingPage}
         >
           検索
         </button>

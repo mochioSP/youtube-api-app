@@ -22,9 +22,9 @@ export const ToyPoodle: FC = memo(() => {
         navigation
         pagination={{ clickable: true }}
       >
-        {videos.map((item) => (
+        {videos.map((video) => (
           <SwiperSlide>
-            <VideoCard video={item} />
+            <VideoCard video={video} />
           </SwiperSlide>
         ))}
       </Swiper>
