@@ -9,14 +9,13 @@ import { InputContext } from "../../../provides/InputTextProvider";
 export const Anything: FC = memo(() => {
   const { searchWord }: any = useContext(InputContext);
   const { getAnythingVideo, videos } = useAnythingVideo();
+
   useEffect(() => getAnythingVideo(searchWord), []);
-  console.log("Anything");
-  console.log(videos);
 
   return (
     //anythingには検索ワードが入るようにする
     <>
-      <p>anything動画</p>
+      <h1 style={{ textAlign: "center" }}>{searchWord}動画</h1>
       <Swiper
         modules={[Navigation, Pagination]}
         navigation

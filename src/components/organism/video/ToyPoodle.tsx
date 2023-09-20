@@ -16,7 +16,7 @@ export const ToyPoodle: FC = memo(() => {
 
   return (
     <>
-      <p style={{ textAlign: "center" }}>トイプードル動画</p>
+      <h1 style={{ textAlign: "center" }}>トイプードル動画</h1>
       <Swiper
         modules={[Navigation, Pagination]}
         navigation

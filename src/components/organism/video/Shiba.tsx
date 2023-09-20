@@ -15,7 +15,9 @@ export const Shiba: FC = memo(() => {
 
   return (
     <>
-      <p style={{ textAlign: "center" }}>柴犬動画</p>
+      <div>
+        <h1 style={{ textAlign: "center" }}>柴犬動画</h1>
+      </div>
       <Swiper
         modules={[Navigation, Pagination]}
         navigation

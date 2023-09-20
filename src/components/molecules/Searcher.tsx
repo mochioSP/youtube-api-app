@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, memo, useContext, useState } from "react";
+import { ChangeEvent, FC, memo, useContext } from "react";
 
 import "../../style/Searcher.css";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,6 @@ import { InputContext } from "../../provides/InputTextProvider";
 export const Searcher: FC = memo(() => {
   const navigate = useNavigate();
   const { searchWord, setSearchWord }: any = useContext(InputContext);
-  // const [searchWord, setSearchWord] = useState("");
 
   const onChangeSearchWord = (e: ChangeEvent<HTMLInputElement>) =>
     setSearchWord(e.target.value);

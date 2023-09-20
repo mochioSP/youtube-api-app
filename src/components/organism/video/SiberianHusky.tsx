@@ -16,7 +16,7 @@ export const SiberianHusky: FC = memo(() => {
 
   return (
     <>
-      <p style={{ textAlign: "center" }}>シベリアンハスキー動画</p>
+      <h1 style={{ textAlign: "center" }}>シベリアンハスキー動画</h1>
       <Swiper
         modules={[Navigation, Pagination]}
         navigation
