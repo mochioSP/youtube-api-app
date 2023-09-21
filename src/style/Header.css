@@ -1,11 +1,17 @@
 header {
-  height: 70px;
-  background-color: #4682a9;
+  height: 75px;
+  background-color: #91c8e4;
 }
 
 p {
   color: #f6f4eb;
   margin: 0;
-  padding-left: 70px;
   font-size: 36px;
+}
+
+.app-title {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

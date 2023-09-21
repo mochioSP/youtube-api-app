@@ -4,17 +4,25 @@ import { Header } from "../organism/layout/Header";
 import { SideBar } from "../organism/layout/SideBar";
 import { Choices } from "../molecules/ChoicesDogButton";
 
+import "../../style/Layout.css";
+
 export const Layout = () => {
   return (
     <>
       <div className="youtube-container">
         <Header />
-        <SideBar />
         <div className="main">
-          <Searcher />
-          <Choices />
-          <div className="video-Area">
-            <Outlet />
+          <div className="Sidebar">
+            <SideBar />
+          </div>
+          <div className="Search-and-video">
+            <div>
+              <Searcher />
+              <Choices />
+            </div>
+            <div className="video-Area">
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>

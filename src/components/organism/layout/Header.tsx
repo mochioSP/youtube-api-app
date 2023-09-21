@@ -6,7 +6,9 @@ export const Header: FC = memo(() => {
   return (
     <>
       <header>
-        <p>いやされるアプリ</p>
+        <div className="app-title">
+          <p>いやされるアプリ</p>
+        </div>
       </header>
     </>
   );

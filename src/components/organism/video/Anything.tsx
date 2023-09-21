@@ -3,8 +3,12 @@ import { FC, memo, useContext, useEffect } from "react";
 import { useAnythingVideo } from "../../../hooks/useAnythingVideo";
 import { VideoCard } from "../../molecules/VideoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination, Mousewheel } from "swiper/modules";
 import { InputContext } from "../../../provides/InputTextProvider";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/mousewheel";
 
 export const Anything: FC = memo(() => {
   const { searchWord }: any = useContext(InputContext);
@@ -16,17 +20,20 @@ export const Anything: FC = memo(() => {
     //anythingには検索ワードが入るようにする
     <>
       <h1 style={{ textAlign: "center" }}>{searchWord}動画</h1>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-      >
-        {videos.map((video) => (
-          <SwiperSlide>
-            <VideoCard video={video} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="swiper-container">
+        <Swiper
+          mousewheel={true}
+          pagination={{ clickable: true }}
+          modules={[Pagination, Mousewheel]}
+          className="my-swiper"
+        >
+          {videos.map((video) => (
+            <SwiperSlide key={video.etag}>
+              <VideoCard video={video} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 });

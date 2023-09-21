@@ -7,23 +7,34 @@ a:hover {
   text-decoration: underline;
 }
 
+.items {
+  display: flex;
+  justify-content: center;
+}
+
 .item {
+  width: 50%;
+  height: 27vh;
   padding: 20px;
-  margin: 20px 10px;
   display: flex;
   border-radius: 5px;
   background-color: #fff;
   color: #666;
-  box-shadow: 0 0 15px rgba(100, 100, 100, 0.2);
+  box-shadow: 0 0 15px rgba(100, 100, 100, 0.5);
+}
+
+.thumbnail {
+  margin: auto;
 }
 
 .right {
+  margin: auto;
   margin-left: 20px;
 }
 
-.right div {
+/* .right div {
   margin-bottom: 10px;
-}
+} */
 
 .right .title {
   font-weight: bold;

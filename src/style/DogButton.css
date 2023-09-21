@@ -1,6 +1,14 @@
 .dog-button {
+  background: #d8d8d8;
   width: 100px;
   height: 60px;
   border-radius: 8px;
   margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.dog-button:hover {
+  background: #747373;
 }

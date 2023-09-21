@@ -1,13 +1,13 @@
 import { FC, memo, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination, Mousewheel } from "swiper/modules";
 
 import { VideoCard } from "../../molecules/VideoCard";
 import { useToyPoodleVideo } from "../../../../src/hooks/useToyPoodleVideo";
 
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/mousewheel";
 
 export const ToyPoodle: FC = memo(() => {
   const { getToyPoodleVideo, videos } = useToyPoodleVideo();
@@ -17,17 +17,20 @@ export const ToyPoodle: FC = memo(() => {
   return (
     <>
       <h1 style={{ textAlign: "center" }}>トイプードル動画</h1>
-      <Swiper
-        modules={[Navigation, Pagination]}
-        navigation
-        pagination={{ clickable: true }}
-      >
-        {videos.map((video) => (
-          <SwiperSlide>
-            <VideoCard video={video} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="swiper-container">
+        <Swiper
+          mousewheel={true}
+          pagination={{ clickable: true }}
+          modules={[Pagination, Mousewheel]}
+          className="my-swiper"
+        >
+          {videos.map((video) => (
+            <SwiperSlide key={video.etag}>
+              <VideoCard video={video} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </>
   );
 });

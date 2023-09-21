@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 import "../../../style/sidebar.css";
-
-const navItems = ["home", "setting", "mail", "support"];
+import { SidebarMenu } from "./SidebarMenu";
 
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -15,17 +14,12 @@ export const SideBar = () => {
             className="sidebar-burger"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span>{isOpen ? "close" : "open"}</span>
+            <span className="material-symbols-outlined">
+              {isOpen ? "Close" : "Menu"}
+            </span>
           </button>
         </header>
-        <nav className="sidebar-menu">
-          {navItems.map((item) => (
-            <button key={item} type="button" className="sidebar-button">
-              <span>{item}</span>
-              <p>{item}</p>
-            </button>
-          ))}
-        </nav>
+        <SidebarMenu />
       </div>
     </aside>
   );
