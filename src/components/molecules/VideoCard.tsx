@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 import { Video } from "../type/api/Video";
-import "../../style/Items.css";
+import styled from "styled-components";
 
 type Props = {
   video: Video;
@@ -18,29 +18,71 @@ export const VideoCard: FC<Props> = memo((props) => {
   };
 
   return (
-    <section className="items">
-      <div className="item">
-        <div className="thumbnail">
-          <a href={youtubeUrl + video.id.videoId}>
-            <img
+    <SVideoAreaContainer>
+      <SVideoCardBg>
+        <SThumbnailBox>
+          <SLink href={youtubeUrl + video.id.videoId}>
+            <SThumbnail
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
             />
-          </a>
-        </div>
-        <div className="right">
-          <div className="title">
-            <a href={youtubeUrl + video.id.videoId}>{video.snippet.title}</a>
-          </div>
+          </SLink>
+        </SThumbnailBox>
+        <SExplanationBox>
+          <STitle>
+            <SLink href={youtubeUrl + video.id.videoId}>{video.snippet.title}</SLink>
+          </STitle>
           <div className="description">{video.snippet.description}</div>
           <div className="channel">
-            <a href={channelUrl + video.snippet.channelId}>
+            <SLink href={channelUrl + video.snippet.channelId}>
               {video.snippet.channelTitle}
-            </a>
+            </SLink>
           </div>
           <div className="time">{formatDate(video.snippet.publishedAt)}</div>
-        </div>
-      </div>
-    </section>
+        </SExplanationBox>
+      </SVideoCardBg>
+    </SVideoAreaContainer>
   );
 });
+
+const SLink = styled.a`
+  color: #5c5c5c;
+  text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+`
+
+const SVideoAreaContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 60px 0;
+`
+const SVideoCardBg = styled.div`
+  width: 50%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #666;
+  box-shadow: 0 0 15px rgba(100, 100, 100, 0.5);
+`
+
+const SThumbnailBox = styled.div`
+  margin: auto;
+  
+`
+const SThumbnail = styled.img`
+  width: 450px;
+`
+
+const SExplanationBox = styled.div`
+  margin: auto;
+  margin-top: 25px;
+  
+`
+const STitle = styled.div`
+  font-weight: bold;
+  font-size: 1.5rem;
+`

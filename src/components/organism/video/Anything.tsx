@@ -17,7 +17,6 @@ export const Anything: FC = memo(() => {
   useEffect(() => getAnythingVideo(searchWord), []);
 
   return (
-    //anythingには検索ワードが入るようにする
     <>
       <h1 style={{ textAlign: "center" }}>{searchWord}動画</h1>
       <div className="swiper-container">

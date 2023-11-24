@@ -16,7 +16,6 @@ export const ToyPoodle: FC = memo(() => {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>トイプードル動画</h1>
       <div className="swiper-container">
         <Swiper
           mousewheel={true}

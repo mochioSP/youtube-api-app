@@ -16,7 +16,6 @@ export const SiberianHusky: FC = memo(() => {
 
   return (
     <>
-      <h1 style={{ textAlign: "center" }}>シベリアンハスキー動画</h1>
       <div className="swiper-container">
         <Swiper
           mousewheel={true}

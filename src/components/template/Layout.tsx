@@ -4,28 +4,30 @@ import { Header } from "../organism/layout/Header";
 import { SideBar } from "../organism/layout/SideBar";
 import { Choices } from "../molecules/ChoicesDogButton";
 
-import "../../style/Layout.css";
+import { FC } from "react";
+import { Footer } from "../organism/layout/Footer";
+import styled from "styled-components";
 
-export const Layout = () => {
+export const Layout:FC = () => {
   return (
     <>
-      <div className="youtube-container">
-        <Header />
-        <div className="main">
-          <div className="Sidebar">
-            <SideBar />
+      <Header />
+      <SideBar />
+        <SContainer>
+          <Choices />
+          <Searcher />
+          <div style={{height: '600px'}}>
+            <Outlet />
           </div>
-          <div className="Search-and-video">
-            <div>
-              <Searcher />
-              <Choices />
-            </div>
-            <div className="video-Area">
-              <Outlet />
-            </div>
-          </div>
-        </div>
-      </div>
+        </SContainer>
+      <Footer />
     </>
   );
 };
+
+const SContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
+

@@ -1,8 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import "../../../style/sidebar.css";
+import styled from "styled-components";
+import { FC, memo } from "react";
+
+type isOpen = {
+  open: boolean
+}
 
 const nav = ["Home", "Settings", "Contacts"];
-export const SidebarMenu = (): JSX.Element[] => {
+export const SidebarMenu: FC<isOpen>= memo((props) => {
+  const { open } = props;
   const navigate = useNavigate();
 
   const onClick = () => {
@@ -10,19 +16,52 @@ export const SidebarMenu = (): JSX.Element[] => {
   };
 
   return nav.map((item) => (
-    <nav className="sidebar-menu" key={item}>
-      <button className="sidebar-button" onClick={onClick}>
-        <span className="material-symbols-outlined">{item}</span>
-        <p>{item}</p>
-      </button>
+    <nav key={item}>
+      <SSidebarBtton onClick={onClick} open={open} >
+        <SSpan className="material-symbols-outlined">{item}</SSpan>
+        <SButtonText>{item}</SButtonText>
+      </SSidebarBtton>
     </nav>
   ));
-};
-//import先でNavigationからSideBarMenuに名称変更
-export const Navigation = (): JSX.Element => {
-  return <div>{SidebarMenu()}</div>;
-};
+});
 
-//  const SideBarMenu = () => {
-//   return <nav>{Navigation()}</nav>;
-// };
+const SSpan = styled.span`
+  margin-left: 7px;
+  opacity: 0.8;
+`
+const SButtonText = styled.p`
+  font-size: 27px;
+  margin-left: 30px;
+  transition: 0.3s;
+`
+
+const SSidebarBtton = styled.button<isOpen>`
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  /* ------------ */
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 55px;
+  width: 100%;
+  font-family: "poppins";
+  font-size: 16px;
+  text-transform: capitalize;
+  line-height: 1;
+  padding: 0 10px;
+  color: #f9f9f9;
+  opacity: 0.8;
+    &:hover {
+      opacity: 1;
+      background: rgb(0 0 0 / 30%);
+      ${SSpan} {
+          opacity: 1;
+      }
+    }
+      ${SButtonText} {
+        opacity: ${(props) => (props.open ? "0" : "1")};
+      }
+`
+

@@ -1,8 +1,12 @@
 import { ChangeEvent, FC, memo, useContext } from "react";
 
-import "../../style/Searcher.css";
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { InputContext } from "../../provides/InputTextProvider";
+
+type SearchButton = {
+  disabled: boolean;
+}
 
 export const Searcher: FC = memo(() => {
   const navigate = useNavigate();
@@ -17,22 +21,46 @@ export const Searcher: FC = memo(() => {
 
   return (
     <>
-      <div className="searcher">
-        <input
+      <SSearcher>
+        <SSearchInput
           className="Search-input"
           placeholder="すきな動物を入力"
           type="text"
           onChange={onChangeSearchWord}
           value={searchWord}
         />
-        <button
+        <SseachButton
           className="search-button"
           disabled={searchWord === ""}
           onClick={onClickGetAnythingPage}
         >
           検索
-        </button>
-      </div>
+        </SseachButton>
+      </SSearcher>
     </>
   );
 });
+
+const SSearcher = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+const SSearchInput = styled.input`
+  padding: 10px;
+  width: 35%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+`
+
+const SseachButton = styled.button<SearchButton>`
+  background: #d8d8d8;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: ${(props) => (props.disabled ? 'auto' : 'pointer')};
+`

@@ -6,7 +6,7 @@ import { MainPageRouters } from "./router/MainPageRouters";
 
 function App() {
   return (
-    <div>
+    <div style={{height: '100%', position: 'relative'}}>
       <InputTextProvider>
         <BrowserRouter>
           <MainPageRouters />

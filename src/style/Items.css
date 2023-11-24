@@ -1,18 +1,18 @@
-a {
+/* a {
   color: #333;
   text-decoration: none;
-}
+} */
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
-.items {
+/* .items {
   display: flex;
   justify-content: center;
-}
+} */
 
-.item {
+/* .item {
   width: 50%;
   height: 27vh;
   padding: 20px;
@@ -21,25 +21,25 @@ a:hover {
   background-color: #fff;
   color: #666;
   box-shadow: 0 0 15px rgba(100, 100, 100, 0.5);
-}
+} */
 
-.thumbnail {
+/* .thumbnail {
   margin: auto;
-}
+} */
 
-.right {
+/* .right {
   margin: auto;
   margin-left: 20px;
-}
+} */
 
 /* .right div {
   margin-bottom: 10px;
 } */
 
-.right .title {
+/* .right .title {
   font-weight: bold;
   font-size: 1.5rem;
-}
+} */
 
 .error {
   color: #ff0000;
